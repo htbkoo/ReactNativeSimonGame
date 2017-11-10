@@ -1,6 +1,6 @@
 {
-  "name": "build_a_simon_game",
-  "version": "0.1.0",
+  "name": "build-a-simon-game",
+  "version": "0.9.0",
   "private": true,
   "dependencies": {
     "babel-polyfill": "^6.23.0",
@@ -53,5 +53,10 @@
     "plugins": [
       "rewire"
     ]
-  }
+  },
+  "files": [
+    "public/",
+    "src/"
+  ],
+  "main": "App.jsx"
 }
