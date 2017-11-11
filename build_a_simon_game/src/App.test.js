@@ -314,7 +314,7 @@ describe("SimonGame - FreeCodeCamp", function () {
                             const wrapperGameButton = shallow(<GameButton/>);
 
                             //    Then
-                            const inputButton = assertAndGetButton(wrapperGameButton);
+                            assertAndGetButton(wrapperGameButton);
                             chai.expect(wrapperGameButton.find('input').html().includes('disabled=""')).to.equal(false);
                         });
                     });
