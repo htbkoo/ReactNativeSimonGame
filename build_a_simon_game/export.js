@@ -1,4 +1,4 @@
-const App = require("./src/App.jsx").default,
+const App = require("./src/App").default,
     game = require("./src/game").default;
 
 module.exports = {
