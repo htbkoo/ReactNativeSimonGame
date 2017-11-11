@@ -58,5 +58,5 @@
     "public/",
     "src/"
   ],
-  "main": "App.jsx"
+  "main": "export.js"
 }
