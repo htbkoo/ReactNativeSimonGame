@@ -21,7 +21,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "build-a-simon-game": "file:///C:\\Users\\Hey\\Desktop\\Hey\\PROJECT\\Mercurial\\self\\ReactNative\\react_native_simon_game\\build_a_simon_game",
+    "build-a-simon-game": "file:./build_a_simon_game",
     "css": "^2.2.1",
     "expo": "^22.0.2",
     "react": "16.0.0-beta.5",
