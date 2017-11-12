@@ -8,17 +8,17 @@ import sinonTest from 'sinon-test';
 sinon.test = sinonTest.configureTest(sinon);
 sinon.testCase = sinonTest.configureTestCase(sinon);
 
-import App, {Dashboard, ButtonsPanel, Title, Score, StrictSwitch, StartButton, Container, GameButton} from './App';
+import SimonGameApp, {Dashboard, ButtonsPanel, Title, Score, StrictSwitch, StartButton, Container, GameButton} from './SimonGameApp';
 import Game from './game';
 
 describe("SimonGame - FreeCodeCamp", function () {
     "use strict";
     describe("FrontEnd - Advanced Project", function () {
         describe("SimonGame", function () {
-            describe("<App/>", function () {
+            describe("<SimonGameApp/>", function () {
                 it("should contain <Title/>, <Dashboard/> and <ButtonsPanel/>", function () {
                     // Given
-                    const wrapperApp = shallow(<App/>);
+                    const wrapperApp = shallow(<SimonGameApp/>);
 
                     // When
                     // Then
@@ -26,7 +26,7 @@ describe("SimonGame - FreeCodeCamp", function () {
                         <Title/>,
                         <Dashboard/>,
                         <ButtonsPanel/>
-                    ])).to.equal(true, "<App/> should contain <Title/>, <Dashboard/> and <ButtonsPanel/>");
+                    ])).to.equal(true, "<SimonGameApp/> should contain <Title/>, <Dashboard/> and <ButtonsPanel/>");
                 });
 
                 it("should set score and status obtained from game on construction", sinon.test(function () {
@@ -37,7 +37,7 @@ describe("SimonGame - FreeCodeCamp", function () {
                     this.stub(Game.prototype, "isRestartDisabled").returns(false);
 
                     // When
-                    const wrapperApp = shallow(<App/>);
+                    const wrapperApp = shallow(<SimonGameApp/>);
 
                     // Then
                     chai.expect(wrapperApp.state().score).to.equal(0);
@@ -60,7 +60,7 @@ describe("SimonGame - FreeCodeCamp", function () {
                         .returns(false);
 
                     // When
-                    const wrapperApp = shallow(<App/>);
+                    const wrapperApp = shallow(<SimonGameApp/>);
 
                     const wrapperDashboard = wrapperApp.find("Dashboard").get(0);
                     wrapperDashboard.props.onUpdateStateFromRestart();
@@ -75,7 +75,7 @@ describe("SimonGame - FreeCodeCamp", function () {
                     this.stub(Game.prototype, "getFormattedScore").returns("someScore");
 
                     // When
-                    const wrapperApp = shallow(<App/>);
+                    const wrapperApp = shallow(<SimonGameApp/>);
 
                     const wrapperDashboard = wrapperApp.find("Dashboard").get(0);
 
@@ -88,7 +88,7 @@ describe("SimonGame - FreeCodeCamp", function () {
                     this.stub(Game.prototype, "isInputDisabled").returns(false);
 
                     // When
-                    const wrapperApp = shallow(<App/>);
+                    const wrapperApp = shallow(<SimonGameApp/>);
                     const wrapperButtonsPanel = wrapperApp.find("ButtonsPanel").get(0);
 
                     // Then

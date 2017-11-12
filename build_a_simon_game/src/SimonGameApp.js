@@ -1,8 +1,7 @@
 import React from "react";
 import Game from "./game";
-import "./App.css";
 
-let game = new Game();
+const game = new Game();
 
 const COLOUR_AUDIOS = (function mockAudioIfAbsent() {
     if (typeof Audio === "undefined") {
@@ -48,7 +47,7 @@ const containersColours = {
     "yellow": "",
 };
 
-class App extends React.Component {
+export default class SimonGameApp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -71,14 +70,14 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="App">
+            <View className="App">
                 <Title/>
                 <Dashboard onUpdateStateFromRestart={this.updateState}
                            score={this.state.score}
                            isRestartDisabled={this.state.isRestartDisabled}/>
                 <ButtonsPanel areButtonsDisabled={this.state.areButtonsDisabled}
                               onUpdateStateFromGameButton={this.updateState}/>
-            </div>
+            </View>
         );
     }
 }
@@ -88,9 +87,9 @@ class Container extends React.Component {
         const evaluatedClassNames = "App-container " + (("colourKey" in this.props) ? containersColours[this.props.colourKey] : "");
 
         return (
-            <div className={evaluatedClassNames}>
+            <View className={evaluatedClassNames}>
                 {this.props.children}
-            </div>
+            </View>
         )
     }
 }
@@ -98,7 +97,7 @@ class Container extends React.Component {
 class Dashboard extends React.Component {
     render() {
         return (
-            <div className="Dashboard">
+            <View className="Dashboard">
                 <Container>
                     <Score score={this.props.score}/>
                 </Container>
@@ -109,7 +108,7 @@ class Dashboard extends React.Component {
                     <StartButton updateState={this.props.onUpdateStateFromRestart}
                                  isDisabled={this.props.isRestartDisabled}/>
                 </Container>
-            </div>
+            </View>
         );
 
     }
@@ -118,7 +117,7 @@ class Dashboard extends React.Component {
 class ButtonsPanel extends React.Component {
     render() {
         return (
-            <div className="ButtonPanel">
+            <View className="ButtonPanel">
                 {
                     [
                         'red',
@@ -132,7 +131,7 @@ class ButtonsPanel extends React.Component {
                         </Container>
                     )
                 }
-            </div>
+            </View>
         );
     }
 }
@@ -140,7 +139,9 @@ class ButtonsPanel extends React.Component {
 class Title extends React.Component {
     render() {
         return (
-            <div className="App-title">Simon® Game</div>
+            <View className="App-title">
+                <Text>Simon® Game</Text>
+            </View>
         );
     }
 }
@@ -148,9 +149,9 @@ class Title extends React.Component {
 class Score extends React.Component {
     render() {
         return (
-            <div>
-                {this.props.score}
-            </div>
+            <View>
+                <Text>{this.props.score}</Text>
+            </View>
         );
     }
 }
@@ -164,9 +165,75 @@ class StrictSwitch extends React.Component {
 
     render() {
         return (
-            <div>
-                <input type="checkbox" name="strict-mode-checkbox" data-label-text="Strict" data-on-color="warning"/>
-            </div>
+            <View>
+                <CheckBox type="checkbox" name="strict-mode-checkbox" data-label-text="Strict" data-on-color="warning"/>
+            </View>
+        );
+    }
+}
+
+class StartButton extends React.Component {
+    render() {
+        return (
+            <View>
+                <Button type="button" className="btn btn-default" disabled={this.props.isDisabled}
+                        title="Restart"
+                        onClick={() => {
+                            const updateState = this.props.updateState;
+                            performRestart(updateState)
+                                .then(() => performDemo(updateState));
+                        }}
+                />
+            </View>
+        );
+    }
+}
+
+class GameButton extends React.Component {
+    render() {
+        let btnClassName = (this.props.colour in BUTTON_COLOUR_MAPPING) ? BUTTON_COLOUR_MAPPING[this.props.colour] : "btn-default";
+
+        return (
+            <View>
+                <Button type="button" className={"btn GameButton " + btnClassName} disabled={this.props.isDisabled}
+                        onClick={() => {
+                            const updateState = this.props.updateState;
+
+                            COLOUR_AUDIOS[this.props.colour].play();
+
+                            game.buttons()[this.props.colour]({
+                                "correctCallback": () => {
+                                    updateState();
+                                },
+                                "scoreCallback": () => {
+                                    updateState();
+                                    flashAll(updateState, COLOURS_CSS_CLASSES.WHITE, 3)
+                                        .then(() => wait(500))
+                                        .then(() => performDemo(updateState));
+                                },
+                                "winCallback": () => {
+                                    updateState();
+                                    Object.keys(COLOURS_CSS_CLASSES).reduce((prev, colour) => {
+                                        return prev.then(() => new Promise(resolved => {
+                                            flashAll(updateState, COLOURS_CSS_CLASSES[colour], 1, 150)
+                                                .then(() => resolved());
+                                        }));
+                                    }, Promise.resolve())
+                                },
+                                "wrongCallback": () => {
+                                    updateState();
+                                    flashAll(updateState, COLOURS_CSS_CLASSES.BLACK, 3)
+                                        .then(() => wait(500))
+                                        .then(() => performDemo(updateState));
+                                },
+                                "restartCallback": () => {
+                                    performRestart(updateState)
+                                        .then(() => performDemo(updateState));
+                                }
+                            });
+                        }}
+                />
+            </View>
         );
     }
 }
@@ -245,23 +312,6 @@ function demoAnimation(sequence, triggerDisplayRefresh, allDemosDone) {
         });
 }
 
-class StartButton extends React.Component {
-    render() {
-        return (
-            <div>
-                <button type="button" className="btn btn-default" disabled={this.props.isDisabled}
-                        onClick={() => {
-                            const updateState = this.props.updateState;
-                            performRestart(updateState)
-                                .then(() => performDemo(updateState));
-                        }}>
-                    Restart
-                </button>
-            </div>
-        );
-    }
-}
-
 function flashAll(triggerDisplayRefresh, colour, times, interval) {
     colour = colour || "";
     times = times || 1;
@@ -287,54 +337,4 @@ function flashAll(triggerDisplayRefresh, colour, times, interval) {
 
 }
 
-class GameButton extends React.Component {
-    render() {
-        let btnClassName = (this.props.colour in BUTTON_COLOUR_MAPPING) ? BUTTON_COLOUR_MAPPING[this.props.colour] : "btn-default";
-
-        return (
-            <div>
-                <input type="button" className={"btn GameButton " + btnClassName} disabled={this.props.isDisabled}
-                       onClick={() => {
-                           const updateState = this.props.updateState;
-
-                           COLOUR_AUDIOS[this.props.colour].play();
-
-                           game.buttons()[this.props.colour]({
-                               "correctCallback": () => {
-                                   updateState();
-                               },
-                               "scoreCallback": () => {
-                                   updateState();
-                                   flashAll(updateState, COLOURS_CSS_CLASSES.WHITE, 3)
-                                       .then(() => wait(500))
-                                       .then(() => performDemo(updateState));
-                               },
-                               "winCallback": () => {
-                                   updateState();
-                                   Object.keys(COLOURS_CSS_CLASSES).reduce((prev, colour) => {
-                                       return prev.then(() => new Promise(resolved => {
-                                           flashAll(updateState, COLOURS_CSS_CLASSES[colour], 1, 150)
-                                               .then(() => resolved());
-                                       }));
-                                   }, Promise.resolve())
-                               },
-                               "wrongCallback": () => {
-                                   updateState();
-                                   flashAll(updateState, COLOURS_CSS_CLASSES.BLACK, 3)
-                                       .then(() => wait(500))
-                                       .then(() => performDemo(updateState));
-                               },
-                               "restartCallback": () => {
-                                   performRestart(updateState)
-                                       .then(() => performDemo(updateState));
-                               }
-                           });
-                       }}
-                />
-            </div>
-        );
-    }
-}
-
-export default App;
 export {Container, Dashboard, ButtonsPanel, Title, Score, StrictSwitch, StartButton, GameButton};

@@ -7,15 +7,15 @@ import sinonTest from 'sinon-test';
 sinon.test = sinonTest.configureTest(sinon);
 sinon.testCase = sinonTest.configureTestCase(sinon);
 
-import App from './App';
+import SimonGameApp from './SimonGameApp';
 import Game from './game';
 
 describe("SimonGame (Full render test) - FreeCodeCamp", function () {
     "use strict";
     describe("FrontEnd - Advanced Project", function () {
         describe("SimonGame", function () {
-            describe("<App/>", function () {
-                it('renders App without crashing', sinon.test(function (done) {
+            describe("<SimonGameApp/>", function () {
+                it('renders SimonGameApp without crashing', sinon.test(function (done) {
                     // Given
                     this.stub(Game.prototype, "status").callsFake(() => {
                         return {
@@ -34,7 +34,7 @@ describe("SimonGame (Full render test) - FreeCodeCamp", function () {
                     // When
                     // Then
                     setUpJsdomAndAssert(() => {
-                        mount(<App/>);
+                        mount(<SimonGameApp/>);
                     }, done)
                 }));
             });
