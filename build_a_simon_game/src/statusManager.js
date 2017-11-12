@@ -2,7 +2,7 @@
  * Created by Hey on 25 Apr 2017
  */
 
-import STATUS_ENUM from "./StatusesEnum"
+const STATUS_ENUM = require("./StatusesEnum").default;
 
 const statuses = new WeakMap();
 

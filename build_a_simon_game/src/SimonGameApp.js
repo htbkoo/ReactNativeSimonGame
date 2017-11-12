@@ -1,5 +1,5 @@
-import React from "react";
-import Game from "./game";
+const React = require('react');
+const Game = require("./game").default;
 
 const game = new Game();
 

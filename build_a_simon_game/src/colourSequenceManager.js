@@ -2,7 +2,7 @@
  * Created by Hey on 28 May 2017
  */
 
-import randomColourGenerator from "./randomColourGenerator";
+const randomColourGenerator = require("./randomColourGenerator").default;
 
 const sequences = new WeakMap();
 const currentSeqIndices = new WeakMap();

@@ -2,7 +2,7 @@
  * Created by Hey on 23 May 2017
  */
 
-import COLOUR_ENUM from "./ColoursEnum";
+const COLOUR_ENUM = require("./ColoursEnum").default;
 
 const POSSIBLE_COLOURS = Object.keys(COLOUR_ENUM);
 const getNextRandomNumber = () => {
