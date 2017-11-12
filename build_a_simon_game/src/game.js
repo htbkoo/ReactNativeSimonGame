@@ -2,11 +2,13 @@
  * Created by Hey on 25 Apr 2017
  */
 
-import scoreFormatter from "./scoreFormatter";
-import STATUS_ENUM from "./StatusesEnum"
-import COLOUR_ENUM, {colourEnumToString} from "./ColoursEnum"
-import StatusManager from "./statusManager";
-import ColourSequenceManager from "./colourSequenceManager";
+const scoreFormatter = require("./scoreFormatter").default;
+const STATUS_ENUM = require("./StatusesEnum").default;
+const ColoursEnum = require("./ColoursEnum");
+const COLOUR_ENUM = ColoursEnum.default;
+const colourEnumToString = ColoursEnum.colourEnumToString;
+const StatusManager = require("./statusManager").default;
+const ColourSequenceManager = require("./colourSequenceManager").default;
 
 const WIN_SCORE = 20;
 
@@ -21,17 +23,6 @@ let SIMPLE_NOTIFY_ACTIONS = {
     "won": STATUS_ENUM.isVictory
 };
 
-function incScore() {
-    scores.set(this, scores.get(this) + 1);
-}
-function isVictory() {
-    return scores.get(this) >= WIN_SCORE;
-}
-
-function setStatusAndPropagateCallback(status, callbackToCall) {
-    statusManagers.get(this).setStatus(status);
-    callbackToCall();
-}
 export default class Game {
     constructor() {
         scores.set(this, 0);
@@ -115,3 +106,16 @@ export default class Game {
         }, {});
     }
 };
+
+function incScore() {
+    scores.set(this, scores.get(this) + 1);
+}
+
+function isVictory() {
+    return scores.get(this) >= WIN_SCORE;
+}
+
+function setStatusAndPropagateCallback(status, callbackToCall) {
+    statusManagers.get(this).setStatus(status);
+    callbackToCall();
+}
