@@ -2,8 +2,18 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/spike" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/helper/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/helper/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/__tests__" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/build_a_simon_game/build" />
+      <excludeFolder url="file://$MODULE_DIR$/build_a_simon_game/node_modules" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="mocha-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="sinon-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="chai-DefinitelyTyped" level="application" />
   </component>
 </module>
