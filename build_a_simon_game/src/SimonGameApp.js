@@ -1,4 +1,6 @@
 const React = require('react');
+const {StyleSheet, Text, View, Button, ToastAndroid} = require('react-native');
+
 const Game = require("./game").default;
 
 const game = new Game();
