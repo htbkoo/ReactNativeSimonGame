@@ -28,7 +28,7 @@ const cssStyles = {
         "font-size": "3",
 
         "border": "3px solid #eebb55",
-        // "border-radius": "7pt",
+        "border-radius": "7",
         "background": "#777777",
         "color": "white",
     },
@@ -41,7 +41,7 @@ const cssStyles = {
         "min-width": "100px",
         "min-height": "100px",
         "border": "3px solid #777777",
-        // "border-radius": "15pt",
+        "border-radius": "15",
         "background": "#999999",
         "color": "#224466",
 
@@ -53,7 +53,7 @@ const cssStyles = {
     },
     "ButtonPanel": {
         "border": "1px solid #eebb55",
-        // "border-radius": "7pt",
+        "border-radius": "7",
         "background": "#dddddd",
 
         "display": "flex",
@@ -85,9 +85,11 @@ const cssStyles = {
     }
 };
 
+const SHORTHAND_BLACKLIST = ["borderRadius"];
+
 const getTransformedCssStyles = () => Object.keys(cssStyles).reduce((prev, key) => {
     let styleObject = cssStyles[key];
-    prev[key] = transform(Object.keys(styleObject).map(styleKey => [styleKey, styleObject[styleKey]]));
+    prev[key] = transform(Object.keys(styleObject).map(styleKey => [styleKey, styleObject[styleKey]]), SHORTHAND_BLACKLIST);
     return prev;
 }, {});
 
