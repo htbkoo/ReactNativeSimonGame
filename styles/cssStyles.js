@@ -25,7 +25,7 @@ const cssStyles = {
         "min-height": "50px",
         "min-width": "500px",
         "width": "100%",
-        "font-size": "3em",
+        "font-size": "3",
 
         "border": "3px solid #eebb55",
         // "border-radius": "7pt",
@@ -36,7 +36,7 @@ const cssStyles = {
         "margin": "20px",
         "padding": "20px",
 
-        "font-size": "2em",
+        "font-size": "2",
 
         "min-width": "100px",
         "min-height": "100px",
