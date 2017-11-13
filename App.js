@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button, Switch, Text, View} from 'react-native';
+import Touchable from 'react-native-platform-touchable';
 
 import Game from "./build_a_simon_game/src/game";
 import styles from "./styles/App.styles";
@@ -180,15 +181,26 @@ class StrictSwitch extends React.Component {
 class StartButton extends React.Component {
     render() {
         return (
-            <View style={styles["center"]}>
-                <Button type="button" style={[styles["btn"], styles["btn-default"]]} disabled={this.props.isDisabled}
-                        title="Restart"
-                        onPress={() => {
-                            const updateState = this.props.updateState;
-                            performRestart(updateState)
-                                .then(() => performDemo(updateState));
-                        }}
-                />
+            <View >
+                <Touchable
+                    onPress={() => {
+                        const updateState = this.props.updateState;
+                        performRestart(updateState)
+                            .then(() => performDemo(updateState));
+                    }}
+                    style={[{
+                        backgroundColor: '#999',
+                        paddingVertical: 10,
+                        paddingHorizontal: 0,
+                    },
+                        styles["btn"],
+                        styles["btn-default"]
+                    ]}
+                    background={Touchable.Ripple('black')}
+                    disabled={this.props.isDisabled}
+                >
+                    <Text style={styles["App-title-text"]}>Restart</Text>
+                </Touchable>
             </View>
         );
     }

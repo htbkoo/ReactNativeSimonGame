@@ -14,7 +14,7 @@ const cssStyles = {
         "display": "flex",
 
         "flex-direction": "row",
-        "justify-content": "space-around",
+        "justify-content": "space-between",
         "align-content": "center",
         "align-items": "center",
     },
@@ -36,7 +36,7 @@ const cssStyles = {
     },
     "App-container": {
         "margin": "5px",
-        "padding": "5px",
+        // "padding": "5px",
 
         "min-width": "70px",
         "min-height": "70px",
