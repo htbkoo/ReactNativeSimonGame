@@ -1,12 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#E5ECFF',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
+const cssStyles = {
     "#root": {
         "display": "flex",
         "margin": "10px",
@@ -15,16 +9,6 @@ const styles = StyleSheet.create({
         "justify-content": "center",
         "align-content": "center",
         "align-items": "center",
-    },
-    ".App": {
-        "border": "1px solid #eebb55",
-        "border-radius": "7pt",
-        "background": "#dddddd",
-
-        "display": "flex",
-
-        "flex-direction": "column",
-        "justify-content": "space-between",
     },
     ".Dashboard": {
         "display": "flex",
@@ -99,6 +83,27 @@ const styles = StyleSheet.create({
     ".bg-colour-yellow": {
         "background-color": "yellow",
     }
-});
+};
+
+let rawStylesObject = {
+    container: {
+        flex: 1,
+        backgroundColor: '#DDD',
+        alignItems: 'center',
+        justifyContent: "space-between",
+    },
+    "App": {
+        "borderWidth": 1,
+        "borderStyle": "solid",
+        "borderColor": "#eebb55",
+        "borderRadius": 7,
+
+        "flexDirection": "column",
+
+        padding: 50,
+    },
+};
+
+const styles = StyleSheet.create(rawStylesObject);
 
 export default styles;

@@ -73,7 +73,7 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <View style={styles.container} className="App">
+            <View style={[styles.container, styles.App]}>
                 <Title/>
                 <Dashboard onUpdateStateFromRestart={this.updateState}
                            score={this.state.score}
