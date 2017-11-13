@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 const cssStyles = {
-    "#root": {
+    "root": {
         "display": "flex",
         "margin": "10px",
 
@@ -10,7 +10,7 @@ const cssStyles = {
         "align-content": "center",
         "align-items": "center",
     },
-    ".Dashboard": {
+    "Dashboard": {
         "display": "flex",
 
         "flex-direction": "row",
@@ -18,7 +18,7 @@ const cssStyles = {
         "align-content": "center",
         "align-items": "center",
     },
-    ".App-title": {
+    "App-title": {
         "align-self": "flex-start",
         "display": "block",
         "padding": "5px",
@@ -32,7 +32,7 @@ const cssStyles = {
         "background": "#777777",
         "color": "white",
     },
-    ".App-container": {
+    "App-container": {
         "margin": "20px",
         "padding": "20px",
 
@@ -51,7 +51,7 @@ const cssStyles = {
         "align-content": "center",
         "align-items": "center",
     },
-    ".ButtonPanel": {
+    "ButtonPanel": {
         "border": "1px solid #eebb55",
         "border-radius": "7pt",
         "background": "#dddddd",
@@ -61,31 +61,31 @@ const cssStyles = {
         "flex-direction": "row",
         "justify-content": "space-between",
     },
-    ".GameButton": {
+    "GameButton": {
         "min-width": "64px !important",
         "min-height": "64px !important",
     },
-    ".bg-colour-white": {
+    "bg-colour-white": {
         "background-color": "white",
     },
-    ".bg-colour-black": {
+    "bg-colour-black": {
         "background-color": "black",
     },
-    ".bg-colour-red": {
+    "bg-colour-red": {
         "background-color": "red",
     },
-    ".bg-colour-green": {
+    "bg-colour-green": {
         "background-color": "green",
     },
-    ".bg-colour-blue": {
+    "bg-colour-blue": {
         "background-color": "blue",
     },
-    ".bg-colour-yellow": {
+    "bg-colour-yellow": {
         "background-color": "yellow",
     }
 };
 
-let rawStylesObject = {
+const rawStylesObject = {
     container: {
         flex: 1,
         backgroundColor: '#DDD',
