@@ -1,21 +1,23 @@
 import React from 'react';
 import {mount} from 'enzyme';
 import jsdom from 'jsdom';
+import chai from "chai"
+import renderer from 'react-test-renderer';
 
 import sinon from 'sinon';
 import sinonTest from 'sinon-test';
 sinon.test = sinonTest.configureTest(sinon);
 sinon.testCase = sinonTest.configureTestCase(sinon);
 
-import SimonGameApp from './SimonGameApp';
-import Game from './game';
+import App from '../App';
+import Game from '../build_a_simon_game/src/game';
 
 describe("SimonGame (Full render test) - FreeCodeCamp", function () {
     "use strict";
     describe("FrontEnd - Advanced Project", function () {
         describe("SimonGame", function () {
-            describe("<SimonGameApp/>", function () {
-                it('renders SimonGameApp without crashing', sinon.test(function (done) {
+            describe("<App/>", function () {
+                it('renders App without crashing', sinon.test(function (done) {
                     // Given
                     this.stub(Game.prototype, "status").callsFake(() => {
                         return {
@@ -34,7 +36,7 @@ describe("SimonGame (Full render test) - FreeCodeCamp", function () {
                     // When
                     // Then
                     setUpJsdomAndAssert(() => {
-                        mount(<SimonGameApp/>);
+                        mount(<App/>);
                     }, done)
                 }));
             });
@@ -68,4 +70,12 @@ describe("SimonGame (Full render test) - FreeCodeCamp", function () {
             }
         });
     }
+
+
+    describe('App.test.js from React Native', function () {
+        it('renders without crashing', () => {
+            const rendered = renderer.create(<App/>).toJSON();
+            chai.expect(rendered).to.equal(true);
+        });
+    });
 });
