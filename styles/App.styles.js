@@ -17,6 +17,11 @@ const rawStylesObject = {
 
         padding: 50,
     },
+    "score": {
+        "display": "flex",
+        "alignContent": "center",
+        "alignItems": "center",
+    },
     "App-title-text": {
         "fontSize": 30,
         "color": "white",

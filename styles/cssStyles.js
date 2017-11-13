@@ -29,6 +29,10 @@ const cssStyles = {
         "border": "3px solid #eebb55",
         "border-radius": "7",
         "background": "#777777",
+
+        "display": "flex",
+        "align-content": "center",
+        "align-items": "center",
     },
     "App-container": {
         "margin": "5px",

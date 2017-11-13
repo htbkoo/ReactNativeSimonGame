@@ -152,8 +152,8 @@ class Title extends React.Component {
 class Score extends React.Component {
     render() {
         return (
-            <View>
-                <Text>{this.props.score}</Text>
+            <View style={styles["score"]}>
+                <Text style={styles["App-title-text"]}>{this.props.score}</Text>
             </View>
         );
     }
