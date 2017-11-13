@@ -100,7 +100,7 @@ class Container extends React.Component {
 class Dashboard extends React.Component {
     render() {
         return (
-            <View className="Dashboard">
+            <View style={styles["Dashboard"]}>
                 <Container>
                     <Score score={this.props.score}/>
                 </Container>
@@ -120,7 +120,7 @@ class Dashboard extends React.Component {
 class ButtonsPanel extends React.Component {
     render() {
         return (
-            <View className="ButtonPanel">
+            <View style={styles["ButtonPanel"]}>
                 {
                     [
                         'red',
