@@ -24,6 +24,7 @@
   "dependencies": {
     "build-a-simon-game": "file:./build_a_simon_game",
     "css": "^2.2.1",
+    "css-to-react-native": "^2.0.4",
     "expo": "^22.0.2",
     "react": "16.0.0-beta.5",
     "react-native": "^0.49.5",
