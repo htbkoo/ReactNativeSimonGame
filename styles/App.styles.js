@@ -17,6 +17,14 @@ const rawStylesObject = {
 
         padding: 50,
     },
+    "App-title-text": {
+        "fontSize": 30,
+        "color": "white",
+    },
+    "App-container-text": {
+        "fontSize": 10,
+        "color": "#224466",
+    }
 };
 
 let transformedCssStyles = getTransformedCssStyles();

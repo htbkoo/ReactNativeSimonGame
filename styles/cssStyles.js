@@ -23,27 +23,22 @@ const cssStyles = {
         // "display": "block",
         "padding": "5px",
         "min-height": "50px",
-        "min-width": "500px",
+        "min-width": "200px",
         "width": "100%",
-        "font-size": "3",
 
         "border": "3px solid #eebb55",
         "border-radius": "7",
         "background": "#777777",
-        "color": "white",
     },
     "App-container": {
-        "margin": "20px",
-        "padding": "20px",
+        "margin": "5px",
+        "padding": "5px",
 
-        "font-size": "2",
-
-        "min-width": "100px",
-        "min-height": "100px",
+        "min-width": "70px",
+        "min-height": "70px",
         "border": "3px solid #777777",
-        "border-radius": "15",
+        "border-radius": "3",
         "background": "#999999",
-        "color": "#224466",
 
         "display": "flex",
         "flex-direction": "column",
