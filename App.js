@@ -160,17 +160,18 @@ class Score extends React.Component {
 }
 
 class StrictSwitch extends React.Component {
-    // componentDidMount() {
-    //     window.$("[name='strict-mode-checkbox']").bootstrapSwitch();
-    //     window.$("[name='strict-mode-checkbox']").on('switchChange.bootstrapSwitch', (event, state) => game.toggleStrict());
-    //
-    // }
+    constructor(props) {
+        super(props);
+        this.state = {value: false};
+    }
 
     render() {
         return (
             <View>
-                <Switch onValueChange={(event, state) => game.toggleStrict()}/>
-                {/*<CheckBox type="checkbox" name="strict-mode-checkbox" data-label-text="Strict" data-on-color="warning"/>*/}
+                <Switch value={this.state.value} onValueChange={value => {
+                    this.setState({value});
+                    game.toggleStrict();
+                }}/>
             </View>
         );
     }
