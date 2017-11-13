@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Switch, Text, View} from 'react-native';
+import {Switch, Text, View} from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 
 import Game from "./build_a_simon_game/src/game";
@@ -209,49 +209,57 @@ class StartButton extends React.Component {
 class GameButton extends React.Component {
     render() {
         let btnClassName = (this.props.colour in BUTTON_COLOUR_MAPPING) ? BUTTON_COLOUR_MAPPING[this.props.colour] : "btn-default";
+        let displayColour = this.props.isDisabled ? "grey" : this.props.colour;
 
         return (
             <View>
-                <Button type="button" style={[styles["btn"], styles["GameButton"], styles[btnClassName]]}
-                        disabled={this.props.isDisabled}
-                        onPress={() => {
-                            const updateState = this.props.updateState;
+                <Touchable
+                    onPress={() => {
+                        const updateState = this.props.updateState;
 
-                            COLOUR_AUDIOS[this.props.colour].play();
+                        COLOUR_AUDIOS[this.props.colour].play();
 
-                            game.buttons()[this.props.colour]({
-                                "correctCallback": () => {
-                                    updateState();
-                                },
-                                "scoreCallback": () => {
-                                    updateState();
-                                    flashAll(updateState, COLOURS_CSS_CLASSES.WHITE, 3)
-                                        .then(() => wait(500))
-                                        .then(() => performDemo(updateState));
-                                },
-                                "winCallback": () => {
-                                    updateState();
-                                    Object.keys(COLOURS_CSS_CLASSES).reduce((prev, colour) => {
-                                        return prev.then(() => new Promise(resolved => {
-                                            flashAll(updateState, COLOURS_CSS_CLASSES[colour], 1, 150)
-                                                .then(() => resolved());
-                                        }));
-                                    }, Promise.resolve())
-                                },
-                                "wrongCallback": () => {
-                                    updateState();
-                                    flashAll(updateState, COLOURS_CSS_CLASSES.BLACK, 3)
-                                        .then(() => wait(500))
-                                        .then(() => performDemo(updateState));
-                                },
-                                "restartCallback": () => {
-                                    performRestart(updateState)
-                                        .then(() => performDemo(updateState));
-                                }
-                            });
-                        }}
-                        title=""
-                />
+                        game.buttons()[this.props.colour]({
+                            "correctCallback": () => {
+                                updateState();
+                            },
+                            "scoreCallback": () => {
+                                updateState();
+                                flashAll(updateState, COLOURS_CSS_CLASSES.WHITE, 3)
+                                    .then(() => wait(500))
+                                    .then(() => performDemo(updateState));
+                            },
+                            "winCallback": () => {
+                                updateState();
+                                Object.keys(COLOURS_CSS_CLASSES).reduce((prev, colour) => {
+                                    return prev.then(() => new Promise(resolved => {
+                                        flashAll(updateState, COLOURS_CSS_CLASSES[colour], 1, 150)
+                                            .then(() => resolved());
+                                    }));
+                                }, Promise.resolve())
+                            },
+                            "wrongCallback": () => {
+                                updateState();
+                                flashAll(updateState, COLOURS_CSS_CLASSES.BLACK, 3)
+                                    .then(() => wait(500))
+                                    .then(() => performDemo(updateState));
+                            },
+                            "restartCallback": () => {
+                                performRestart(updateState)
+                                    .then(() => performDemo(updateState));
+                            }
+                        });
+                    }}
+                    style={[{
+                        backgroundColor: displayColour,
+                        paddingVertical: 20,
+                        paddingHorizontal: 20,
+                    }, styles["btn"], styles[btnClassName]]}
+                    background={Touchable.Ripple("grey")}
+                    disabled={this.props.isDisabled}
+                >
+                    <Text/>
+                </Touchable>
             </View>
         );
     }
