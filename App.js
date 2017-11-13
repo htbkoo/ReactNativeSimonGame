@@ -181,7 +181,7 @@ class StrictSwitch extends React.Component {
 class StartButton extends React.Component {
     render() {
         return (
-            <View >
+            <View style={styles["startButton"]}>
                 <Touchable
                     onPress={() => {
                         const updateState = this.props.updateState;
