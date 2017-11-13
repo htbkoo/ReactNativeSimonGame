@@ -87,10 +87,10 @@ export default class App extends React.Component {
 
 class Container extends React.Component {
     render() {
-        const evaluatedClassNames = "App-container " + (("colourKey" in this.props) ? containersColours[this.props.colourKey] : "");
+        const evaluatedClassName = (("colourKey" in this.props) ? containersColours[this.props.colourKey] : "");
 
         return (
-            <View className={evaluatedClassNames}>
+            <View style={[styles["App-container"], styles[evaluatedClassName]]}>
                 {this.props.children}
             </View>
         )
@@ -180,7 +180,7 @@ class StartButton extends React.Component {
     render() {
         return (
             <View>
-                <Button type="button" className="btn btn-default" disabled={this.props.isDisabled}
+                <Button type="button" style={[styles["btn"], styles["btn-default"]]} disabled={this.props.isDisabled}
                         title="Restart"
                         onPress={() => {
                             const updateState = this.props.updateState;
@@ -199,7 +199,8 @@ class GameButton extends React.Component {
 
         return (
             <View>
-                <Button type="button" className={"btn GameButton " + btnClassName} disabled={this.props.isDisabled}
+                <Button type="button" style={[styles["btn"], styles["GameButton"], styles[btnClassName]]}
+                        disabled={this.props.isDisabled}
                         onPress={() => {
                             const updateState = this.props.updateState;
 
