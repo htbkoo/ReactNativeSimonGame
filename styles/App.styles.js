@@ -17,9 +17,9 @@ const rawStylesObject = {
 
         padding: 50,
     },
-    "score": {
-        "display": "flex",
-        "alignContent": "center",
+    "center": {
+        "flex": 1,
+        "justifyContent": "center",
         "alignItems": "center",
     },
     "App-title-text": {
@@ -34,13 +34,13 @@ const rawStylesObject = {
 
 let transformedCssStyles = getTransformedCssStyles();
 Object.keys(transformedCssStyles).forEach(key => {
-        if (!(key in rawStylesObject)) {
-            rawStylesObject[key] = transformedCssStyles[key];
-            console.log(`Added a style ${key}=${JSON.stringify(rawStylesObject[key])} to rawStylesObject`);
-        } else {
-            console.log(`warning: Style ${key} already exists in rawStylesObject`);
-        }
-    });
+    if (!(key in rawStylesObject)) {
+        rawStylesObject[key] = transformedCssStyles[key];
+        console.log(`Added a style ${key}=${JSON.stringify(rawStylesObject[key])} to rawStylesObject`);
+    } else {
+        console.log(`warning: Style ${key} already exists in rawStylesObject`);
+    }
+});
 
 const styles = StyleSheet.create(rawStylesObject);
 
