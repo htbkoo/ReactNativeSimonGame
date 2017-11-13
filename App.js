@@ -142,7 +142,7 @@ class ButtonsPanel extends React.Component {
 class Title extends React.Component {
     render() {
         return (
-            <View className="App-title">
+            <View style={styles["App-title"]}>
                 <Text>Simon® Game</Text>
             </View>
         );
