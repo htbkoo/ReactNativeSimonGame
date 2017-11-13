@@ -143,7 +143,7 @@ class Title extends React.Component {
     render() {
         return (
             <View style={styles["App-title"]}>
-                <Text>Simon® Game</Text>
+                <Text style={styles["App-title-text"]}>Simon® Game</Text>
             </View>
         );
     }
