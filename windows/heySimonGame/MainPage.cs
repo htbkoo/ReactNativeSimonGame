@@ -15,6 +15,14 @@ namespace heySimonGame
             }
         }
 
+        public override string JavaScriptMainModuleName
+        {
+            get
+            {
+                return "index";
+            }
+        }
+
 #if BUNDLE
         public override string JavaScriptBundleFile
         {

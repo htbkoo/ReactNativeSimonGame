@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="17dde7bd-4145-4126-8fee-35cdbd569ef7"
+    Name="d3cbc61f-e72d-400c-88f2-c1db48fb1d0a"
     Publisher="CN=Hei"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="17dde7bd-4145-4126-8fee-35cdbd569ef7" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="d3cbc61f-e72d-400c-88f2-c1db48fb1d0a" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>heySimonGame</DisplayName>
