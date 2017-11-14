@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{db915af1-7f31-4166-96e1-e29e0b652400}</ProjectGuid>
+    <ProjectGuid>{68e08b2b-24d2-41a8-9c2f-7c40f1bd9756}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>heySimonGame</RootNamespace>
@@ -17,7 +17,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>heySimonGame_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>7656094A3890447E609C77B7AEE6E52842E95639</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>C1888702F05675E1EC0106F54BCEA6C332C9A0C2</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
