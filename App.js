@@ -180,6 +180,8 @@ class StrictSwitch extends React.Component {
 
 class StartButton extends React.Component {
     render() {
+        const text = this.props.isDisabled ? "Watch" : "Restart";
+
         return (
             <View style={styles["startButton"]}>
                 <Touchable
@@ -199,7 +201,7 @@ class StartButton extends React.Component {
                     background={Touchable.Ripple('black')}
                     disabled={this.props.isDisabled}
                 >
-                    <Text style={styles["App-title-text"]}>Restart</Text>
+                    <Text style={styles["App-title-text"]}>{text}</Text>
                 </Touchable>
             </View>
         );
