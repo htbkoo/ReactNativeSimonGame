@@ -2,7 +2,7 @@ import React from 'react';
 import {Switch, Text, View} from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 
-import Game from "./build_a_simon_game/src/game";
+import {Game} from "build-a-simon-game";
 import styles from "./styles/App.styles";
 
 const game = new Game();
