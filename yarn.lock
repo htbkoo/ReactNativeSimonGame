@@ -5665,9 +5665,9 @@ react-native-vector-icons@4.4.2:
     prop-types "^15.5.10"
     yargs "^8.0.2"
 
-react-native-windows@0.47.0-rc.5:
-  version "0.47.0-rc.5"
-  resolved "https://registry.yarnpkg.com/react-native-windows/-/react-native-windows-0.47.0-rc.5.tgz#fb76b0b863e9eee2b2a1de511cb229c95e1df505"
+react-native-windows@0.49.0-rc.2:
+  version "0.49.0-rc.2"
+  resolved "https://registry.yarnpkg.com/react-native-windows/-/react-native-windows-0.49.0-rc.2.tgz#4fc8791973ad1f13a2c5d9247022f069e029a25a"
   dependencies:
     chalk "^1.1.3"
     glob "^7.1.2"
