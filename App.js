@@ -339,10 +339,7 @@ function demoAnimation(sequence, triggerDisplayRefresh, allDemosDone) {
         });
 }
 
-function flashAll(triggerDisplayRefresh, colour, times, interval) {
-    colour = colour || "";
-    times = times || 1;
-    interval = interval || 100;
+function flashAll(triggerDisplayRefresh, colour = "", times = 1, interval = 100) {
     return new Array(times).fill(0)
         .reduce((prev) => {
             return prev.then(() => new Promise(flashDone => {
