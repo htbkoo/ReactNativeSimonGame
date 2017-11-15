@@ -11,8 +11,8 @@
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "yarn-start": "yarn start --reset-cache --config=rn-cli.config.js",
-    "start": "react-native-scripts start",
+    "yarn-reset-start": "yarn start --reset-cache",
+    "start": "react-native-scripts start --config=rn-cli.config.js",
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
