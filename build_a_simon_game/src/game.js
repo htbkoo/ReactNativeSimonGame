@@ -52,7 +52,7 @@ export default class Game {
     }
 
     isRestartDisabled() {
-        return this.status().isDemoing();
+        return this.status().isStarting() || this.status().isDemoing();
     }
 
     buttons() {
