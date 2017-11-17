@@ -18,7 +18,9 @@ const rawStylesObject = {
         padding: 50,
     },
     "startButton": {
-        "paddingBottom": 5
+        "paddingBottom": 5,
+        "minWidth": 100,
+        "alignItems": "center"
     },
     "center": {
         "flex": 1,

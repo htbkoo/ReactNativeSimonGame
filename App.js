@@ -2,7 +2,7 @@ import React from 'react';
 import {Switch, Text, View} from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 
-import {Game} from "build-a-simon-game"
+import {Game} from "build-a-simon-game";
 import styles from "./styles/App.styles";
 
 const game = new Game();
@@ -100,6 +100,18 @@ class Container extends React.Component {
 
 class Dashboard extends React.Component {
     render() {
+        const isRestartDisabled = this.props.isRestartDisabled;
+        const startButton = isRestartDisabled ? (
+            <Container>
+                <Text style={[styles["App-title-text"]]}>
+                    Watch
+                </Text>
+            </Container>
+        ) : (
+            <StartButton updateState={this.props.onUpdateStateFromRestart}
+                         isDisabled={isRestartDisabled}/>
+        );
+
         return (
             <View style={styles["Dashboard"]}>
                 <Container>
@@ -108,13 +120,9 @@ class Dashboard extends React.Component {
                 <Container>
                     <StrictSwitch/>
                 </Container>
-                <Container>
-                    <StartButton updateState={this.props.onUpdateStateFromRestart}
-                                 isDisabled={this.props.isRestartDisabled}/>
-                </Container>
+                {startButton}
             </View>
         );
-
     }
 }
 
@@ -191,14 +199,15 @@ class StartButton extends React.Component {
                             .then(() => performDemo(updateState));
                     }}
                     style={[{
-                        backgroundColor: '#999',
-                        paddingVertical: 10,
-                        paddingHorizontal: 0,
+                        backgroundColor: '#05A5D1',
+                        paddingVertical: 12,
+                        paddingHorizontal: 10,
+                        borderRadius: 5
                     },
                         styles["btn"],
                         styles["btn-default"]
                     ]}
-                    background={Touchable.Ripple('black')}
+                    background={Touchable.Ripple('#0075A1')}
                     disabled={this.props.isDisabled}
                 >
                     <Text style={styles["App-title-text"]}>{text}</Text>
@@ -343,8 +352,8 @@ function demoAnimation(sequence, triggerDisplayRefresh, allDemosDone) {
 
 function flashAll(triggerDisplayRefresh, colour = "", times = 1, interval = 100) {
     return new Array(times).fill(0)
-        .reduce((prev) => {
-            return prev.then(() => new Promise(flashDone => {
+        .reduce(prev => prev.then(() =>
+            new Promise(flashDone =>
                 wait(interval, () => {
                     console.log("colour: " + colour);
                     setAllContainersColoursTo("");
@@ -357,9 +366,7 @@ function flashAll(triggerDisplayRefresh, colour = "", times = 1, interval = 100)
                     }).then(() => {
                         flashDone()
                     });
-                })
-            }))
-        }, Promise.resolve())
+                }))), Promise.resolve())
 
 }
 
