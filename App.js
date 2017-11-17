@@ -177,14 +177,16 @@ class StrictSwitch extends React.Component {
 
     render() {
         return (
-            <View style={styles["center"]}>
+            <View style={[styles["center"]]}>
                 <Switch value={this.state.value}
                         onValueChange={value => {
                             this.setState({value});
                             game.toggleStrict();
                         }}
                         activeText={'Strict'}
-                        inActiveText={'Simple'}
+                        inActiveText={'Easy'}
+
+                        circleSize={45}
                 />
             </View>
         );
