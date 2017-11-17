@@ -5,13 +5,13 @@
  */
 
 import React, {Component} from 'react';
-import App from './App';
+import App from './App.windows';
 import {AppRegistry} from 'react-native';
 
 class heySimonGame extends Component {
     render() {
         return (
-                <App/>
+            <App/>
         );
     }
 }
