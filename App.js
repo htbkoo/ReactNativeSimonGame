@@ -1,6 +1,7 @@
 import React from 'react';
-import {Switch, Text, View} from 'react-native';
+import {Text, View} from 'react-native';
 import Touchable from 'react-native-platform-touchable';
+import {Switch} from 'react-native-switch';
 
 import {Game} from "build-a-simon-game";
 import styles from "./styles/App.styles";
@@ -177,10 +178,14 @@ class StrictSwitch extends React.Component {
     render() {
         return (
             <View style={styles["center"]}>
-                <Switch value={this.state.value} onValueChange={value => {
-                    this.setState({value});
-                    game.toggleStrict();
-                }}/>
+                <Switch value={this.state.value}
+                        onValueChange={value => {
+                            this.setState({value});
+                            game.toggleStrict();
+                        }}
+                        activeText={'Strict'}
+                        inActiveText={'Simple'}
+                />
             </View>
         );
     }
