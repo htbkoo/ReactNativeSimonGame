@@ -10,6 +10,9 @@
     },
     "android": {
       "package": "com.hey.heySimonGame"
+    },
+    "packagerOpts": {
+      "config": "rn-cli.config.js"
     }
   }
 }
