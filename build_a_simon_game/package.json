@@ -50,5 +50,8 @@
     "public/",
     "src/"
   ],
-  "main": "export.js"
+  "main": "export.js",
+  "scripts": {
+    "test": "mocha src/*.test.js -r babel-register"
+  }
 }
