@@ -90,9 +90,12 @@ export default class App extends React.Component {
 class Container extends React.Component {
     render() {
         const evaluatedClassName = (("colourKey" in this.props) ? containersColours[this.props.colourKey] : "");
+        const evaluatedStyles = styles[evaluatedClassName] ?
+            [styles["App-container"], styles[evaluatedClassName]] :
+            [styles["App-container"]];
 
         return (
-            <View style={[styles["App-container"], styles[evaluatedClassName]]}>
+            <View style={evaluatedStyles}>
                 {this.props.children}
             </View>
         )
