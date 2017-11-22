@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "heySimonGame",
-    "icon": "./resources/Square150x150Logo.scale-200.png",
+    "icon": "./resources/icon.png",
     "version": "0.6.0",
     "slug": "heySimonGame",
     "sdkVersion": "22.0.0",
