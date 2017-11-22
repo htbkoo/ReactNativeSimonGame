@@ -1,8 +1,8 @@
 {
   "expo": {
     "name": "heySimonGame",
-    "icon": "./resources/piano.png",
-    "version": "0.5.0",
+    "icon": "./resources/Square150x150Logo.scale-200.png",
+    "version": "0.6.0",
     "slug": "heySimonGame",
     "sdkVersion": "22.0.0",
     "ios": {
