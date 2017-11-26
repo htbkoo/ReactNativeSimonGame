@@ -1188,9 +1188,6 @@ buffer-fill@^0.1.0:
   version "0.9.0"
   dependencies:
     babel-polyfill "^6.23.0"
-    react "^15.4.2"
-    react-dom "^15.4.2"
-    react-native "^0.49.5"
 
 builtin-modules@^1.0.0:
   version "1.1.1"
@@ -1546,7 +1543,7 @@ crc@3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/crc/-/crc-3.3.0.tgz#fa622e1bc388bf257309082d6b65200ce67090ba"
 
-create-react-class@^15.5.2, create-react-class@^15.6.0:
+create-react-class@^15.5.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.2.tgz#cf1ed15f12aad7f14ef5f2dfe05e6c42f91ef02a"
   dependencies:
@@ -4604,15 +4601,6 @@ react-devtools-core@^2.5.0:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
-react-dom@^15.4.2:
-  version "15.6.2"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.2.tgz#41cfadf693b757faf2708443a1d1fd5a02bef730"
-  dependencies:
-    fbjs "^0.8.9"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.0"
-    prop-types "^15.5.10"
-
 react-native-branch@2.0.0-beta.3:
   version "2.0.0-beta.3"
   resolved "https://registry.yarnpkg.com/react-native-branch/-/react-native-branch-2.0.0-beta.3.tgz#2167af86bbc9f964bd45bd5f37684e5b54965e32"
@@ -4664,9 +4652,9 @@ react-native-svg@5.4.2:
     color "^0.11.1"
     lodash "^4.16.6"
 
-react-native-switch@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/react-native-switch/-/react-native-switch-1.2.1.tgz#b203b1d226d9e29521424866963aa1e7c13503cc"
+react-native-switch@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-switch/-/react-native-switch-1.3.0.tgz#a037e5793c3d9ee09c67f7485eb5008491267962"
   dependencies:
     prop-types "^15.6.0"
 
@@ -4778,16 +4766,6 @@ react@16.0.0-beta.5:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
     prop-types "^15.5.6"
-
-react@^15.4.2:
-  version "15.6.2"
-  resolved "https://registry.yarnpkg.com/react/-/react-15.6.2.tgz#dba0434ab439cfe82f108f0f511663908179aa72"
-  dependencies:
-    create-react-class "^15.6.0"
-    fbjs "^0.8.9"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.0"
-    prop-types "^15.5.10"
 
 read-chunk@^2.0.0:
   version "2.1.0"
