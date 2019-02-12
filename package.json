@@ -4,10 +4,13 @@
   "private": true,
   "devDependencies": {
     "chai": "^4.1.2",
+    "enzyme": "^3.8.0",
     "jest-expo": "^22.0.0",
+    "jsdom": "^13.2.0",
     "mocha": "^3.5.0",
     "react-native-scripts": "1.7.0",
-    "react-test-renderer": "16.0.0-beta.5"
+    "react-test-renderer": "16.0.0-beta.5",
+    "sinon-test": "^2.4.0"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
