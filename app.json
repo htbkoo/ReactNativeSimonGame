@@ -6,7 +6,7 @@
     "icon": "./resources/icon.png",
     "version": "0.7.0",
     "slug": "heySimonGame",
-    "sdkVersion": "24.0.0",
+    "sdkVersion": "25.0.0",
     "ios": {
       "bundleIdentifier": "com.hey.heySimonGame"
     },
