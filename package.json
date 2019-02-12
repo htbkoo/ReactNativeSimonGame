@@ -1,6 +1,6 @@
 {
   "name": "heySimonGame",
-  "version": "0.5.0",
+  "version": "0.7.0",
   "private": true,
   "devDependencies": {
     "chai": "^4.1.2",
