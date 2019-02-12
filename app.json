@@ -3,7 +3,7 @@
     "name": "heySimonGame",
     "description": "Simon-Game, now available on your phone!",
     "icon": "./resources/icon.png",
-    "version": "0.6.0",
+    "version": "0.7.0",
     "slug": "heySimonGame",
     "sdkVersion": "22.0.0",
     "ios": {
