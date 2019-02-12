@@ -26,9 +26,9 @@
     "build-a-simon-game": "file:./build_a_simon_game",
     "css": "^2.2.1",
     "css-to-react-native": "^2.0.4",
-    "expo": "^22.0.2",
-    "react": "16.0.0-beta.5",
-    "react-native": "^0.49.5",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz",
+    "expo": "^23.0.0",
+    "react": "16.0.0",
     "react-native-platform-touchable": "^1.1.1",
     "react-native-switch": "^1.3.0"
   }
