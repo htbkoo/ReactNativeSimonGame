@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "heySimonGame",
+    "name": "hey-react-native-simon-game",
     "description": "Simon-Game, now available on your phone!",
+    "githubUrl": "https://github.com/htbkoo/ReactNativeSimonGame.git",
     "icon": "./resources/icon.png",
     "version": "0.7.0",
     "slug": "heySimonGame",
