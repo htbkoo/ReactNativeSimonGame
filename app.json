@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "heySimonGame",
+    "description": "Simon-Game, now available on your phone!",
     "icon": "./resources/icon.png",
     "version": "0.6.0",
     "slug": "heySimonGame",
