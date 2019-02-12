@@ -1,3 +1,5 @@
+import 'es6-symbol/implement';
+
 import React from 'react';
 import {Text, View} from 'react-native';
 import Touchable from 'react-native-platform-touchable';

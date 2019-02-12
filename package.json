@@ -29,6 +29,7 @@
     "build-a-simon-game": "file:./build_a_simon_game",
     "css": "^2.2.1",
     "css-to-react-native": "^2.0.4",
+    "es6-symbol": "^3.1.1",
     "expo": "^24.0.0",
     "react": "16.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-24.0.0.tar.gz",
